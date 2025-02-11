@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <StoreProvider>
     <html lang="en">
       <body
-        className={``}
+        className={`mx-auto max-w-[1920px] overflow-x-hidden bg-black06   `}
       >
           <NavBar />
           {children}

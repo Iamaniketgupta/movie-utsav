@@ -14,17 +14,19 @@ import SearchModal from "./SearchModal";
 export default function NavBar() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("");
+    const [activeSection, setActiveSection] = useState("#");
     const [modalOpen, setModalOpen] = useState(false);
 
     const hidenavItems = pathname.startsWith("/show/");
 
     useEffect(() => {
+       console.log("first")
         const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
+                        console.log({entry})
                         setActiveSection(entry.target.id);
                     }
                 });
@@ -41,8 +43,11 @@ export default function NavBar() {
         };
     }, []);
 
+    console.log({activeSection})
+
+
     return (
-        <header className="flex fixed bg-gradient-to-b from-black top-0   w-full h-24 z-50
+        <header className="flex  max-w-[1920px] fixed bg-gradient-to-b from-black top-0   w-full h-24 z-50
      items-center justify-between gap-4 lg:px-40 md:px-10 px-4 py-4">
 
             {modalOpen && <SearchModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />}
@@ -58,31 +63,31 @@ export default function NavBar() {
                 <nav className="bg-black06 text-gray75 font-[400] md:text-sm h-18 border-4 py-2 px-8 flex items-center gap-4 border-black12 rounded-xl hidden lg:flex">
                     <a
                         href="#"
-                        className={`cursor-pointer hover:bg-black10 py-2 px-4 rounded-lg   ${activeSection === "#" ? "text-white bg-black12" : ""}`}
+                        className={`  ${activeSection === "#" ? "text-white bg-black12" : ""} cursor-pointer hover:bg-black10 py-2 px-4 rounded-lg `}
                     >
                         Home
                     </a>
                     <a
                         href="#upcoming"
-                        className={`hover:bg-black10 py-2 px-4 rounded-lg  cursor-pointer  ${activeSection === "upcoming" ? "bg-black12 text-white" : "text-gra75"}`}
+                        className={`  ${activeSection === "upcoming" ? "bg-black12 text-white" : "text-gra75"} hover:bg-black10 py-2 px-4 rounded-lg  cursor-pointer `}
                     >
                         Upcoming
                     </a>
                     <a
                         href="#latest"
-                        className={`hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer ${activeSection === "latest" ? "bg-black12 text-white" : "text-gra75"}`}
+                        className={`${activeSection === "latest" ? "bg-black12 text-white" : "text-gra75"} hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer `}
                     >
                         Latest
                     </a>
                     <a
                         href="#popular"
-                        className={`hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer ${activeSection === "popular" ? "bg-black12 text-white" : "text-gra75"}`}
+                        className={`${activeSection === "popular" ? "bg-black12 text-white" : "text-gra75"} hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer `}
                     >
                         Popular
                     </a>
                     <a
                         href="#toprated"
-                        className={`hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer ${activeSection === "toprated" ? "bg-black12 text-white" : "text-gra75"}`}
+                        className={` ${activeSection === "toprated" ? "bg-black12 text-white" : "text-gra75"} hover:bg-black10 py-2 px-4 rounded-lg cursor-pointer ${activeSection === "toprated" ? "bg-black12 text-white" : "text-gra75"}`}
                     >
                         TopRated
                     </a>
