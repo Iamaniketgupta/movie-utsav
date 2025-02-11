@@ -95,7 +95,7 @@ function ListSlider({ title ,data}) {
                                 className="flex items-center max-w-[200px] overflow-x-hidden justify-center gap-2"
                                 style={{ scrollbarWidth: "none" }}
                             >
-                                {Array.from({ length: Math.ceil(data.length / itemsPerView) }).map((_, index) => (
+                                {Array.from({ length: Math.ceil(data?.length / itemsPerView) }).map((_, index) => (
                                     <div
                                         key={index}
                                         onClick={() => setCurrentIndex(index * itemsPerView)}
