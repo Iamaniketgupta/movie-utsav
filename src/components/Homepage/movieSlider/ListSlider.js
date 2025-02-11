@@ -1,8 +1,6 @@
 "use client";
-
 import React, { useState, useEffect, useCallback } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { useSelector } from "react-redux";
 import SliderCard from "./SliderCard";
 
 function ListSlider({ title ,data}) {

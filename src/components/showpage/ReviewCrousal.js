@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState, useEffect, useRef } from 'react';
 import { IoAdd } from 'react-icons/io5';
 import ReviewCard from './ReviewCard';
@@ -17,6 +16,7 @@ export default function ReviewCrousal() {
     const totalSlides = reviews.length - itemsPerView + 1;
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
             setCurrentIndex(0);

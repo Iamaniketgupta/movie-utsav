@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import demoImg from "../../assets/page.png";
 import { FaPlay } from 'react-icons/fa';
 import { IoMdAdd } from "react-icons/io";
 import { AiOutlineLike } from "react-icons/ai";

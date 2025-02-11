@@ -14,7 +14,7 @@ import SearchModal from "./SearchModal";
 export default function NavBar() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("#");
+    const [activeSection, setActiveSection] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
 
     const hidenavItems = pathname.startsWith("/show/");
