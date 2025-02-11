@@ -176,7 +176,9 @@ export default function NavBar() {
                         <div className="flex items-center gap-4 mt-6">
                             <div className="cursor-pointer hover:text-gray75">
                                 <CiSearch 
-                                 onClick={() => setModalOpen(true)}/>
+                                 onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setModalOpen(true)}}/>
                             </div>
                             <div className="cursor-pointer hover:text-gray75">
                                 <GoBell />
