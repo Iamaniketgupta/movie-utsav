@@ -13,7 +13,7 @@ export default function ReviewCrousal() {
     
     const getItemsPerView = () => (windowWidth < 1024 ? 1 : 2);
     const itemsPerView = getItemsPerView();
-    const totalSlides = reviews?.length - itemsPerView + 1;
+    const totalSlides = reviews.length - itemsPerView + 1;
 
     useEffect(() => {
         if (typeof window === "undefined") return;

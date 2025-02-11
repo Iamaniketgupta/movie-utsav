@@ -18,9 +18,11 @@ function ListSlider({ title ,data}) {
     };
 
     const itemsPerView = getItemsPerView();
-    const totalSlides = data?.length - itemsPerView + 1;
+    const totalSlides = data && data?.length - itemsPerView + 1 || 0;
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
+
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
             setCurrentIndex(0);

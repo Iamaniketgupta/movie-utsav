@@ -16,6 +16,8 @@ const SearchModal = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
     };
