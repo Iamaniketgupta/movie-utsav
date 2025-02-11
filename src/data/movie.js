@@ -4,7 +4,7 @@ const API_BASE_URL=process.env.NEXT_PUBLIC_API_URL
 const TOKEN=process.env.NEXT_PUBLIC_ACCESS_TOKEN
 const header= {
     "Accept": "application/json",
-    "Authorization": `Bearer ${TOKEN}`,
+    "Authorization": `${TOKEN}`,
     "api_key": process.env.NEXT_PUBLIC_API_KEY,  
   }
 
