@@ -5,7 +5,7 @@ const TOKEN=process.env.NEXT_PUBLIC_ACCESS_TOKEN
 const header= {
     "Accept": "application/json",
     "Authorization": `${TOKEN}`,
-    "api_key": process.env.NEXT_PUBLIC_API_KEY,  
+    "api_key": `${process.env.NEXT_PUBLIC_API_KEY}`,  
   }
 
 export const getPopularMovies = async()=>{
@@ -76,27 +76,5 @@ export const searchMovies = async(query)=>{
 }
 
 
- 
-// const getLatestMovies = async () => {
-//       const options = {
-//           method: 'GET',
-//           url: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
-       
-//       };
 
-//       try {
-//           const res = await axios.request(options);
-//           console.log(res.data);   
 
-//            dispatch(setMoviesData({ type: 'latest', data: res.data.results }));
-
-//       } catch (err) {
-//           console.error(err);
-//       }
-//   }
-  
-
-//   useEffect(() => {
-//       getLatestMovies();
-
-//   }, []);
