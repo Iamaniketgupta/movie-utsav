@@ -56,10 +56,10 @@ const SearchModal = ({ isOpen, onClose }) => {
 
         {/* Searched Movies Grid */}
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 overflow-y-auto max-h-[70vh]">
-          {movies.length === 0 ? (
+          {movies?.length === 0 ? (
             <div o className="col-span-full text-center text-gray-400 text-sm">No Movies Found</div>
           ) : (
-            movies.map((item) =>
+            movies?.map((item) =>
               <div key={item.id}>
                 <Link onClick={onClose}
                   href={`/show/${item.id}`}><SliderCard data={item} /></Link>

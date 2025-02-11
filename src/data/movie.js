@@ -4,7 +4,8 @@ const API_BASE_URL=process.env.NEXT_PUBLIC_API_URL
 const TOKEN=process.env.NEXT_PUBLIC_ACCESS_TOKEN
 const header =  {  
     accept: 'application/json',
-    Authorization: `Bearer ${TOKEN}`
+    Authorization: `Bearer ${TOKEN}`,
+    api_key: process.env.NEXT_PUBLIC_API_KEY
 }
 
 export const getPopularMovies = async()=>{

@@ -18,7 +18,7 @@ function ListSlider({ title ,data}) {
     };
 
     const itemsPerView = getItemsPerView();
-    const totalSlides = data.length - itemsPerView + 1;
+    const totalSlides = data?.length - itemsPerView + 1;
 
     useEffect(() => {
         const handleResize = () => {

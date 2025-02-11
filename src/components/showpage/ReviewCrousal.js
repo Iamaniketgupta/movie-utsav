@@ -13,7 +13,7 @@ export default function ReviewCrousal() {
     
     const getItemsPerView = () => (windowWidth < 1024 ? 1 : 2);
     const itemsPerView = getItemsPerView();
-    const totalSlides = reviews.length - itemsPerView + 1;
+    const totalSlides = reviews?.length - itemsPerView + 1;
 
     useEffect(() => {
         if (typeof window === "undefined") return;
@@ -62,7 +62,7 @@ export default function ReviewCrousal() {
                         <IoIosArrowRoundBack />
                     </button>
                     <div className='flex items-center gap-2'>
-                        {Array.from({ length: Math.ceil(reviews.length / itemsPerView) }).map((_, index) => (
+                        {Array.from({ length: Math.ceil(reviews?.length / itemsPerView) }).map((_, index) => (
                             <div key={index} className={`w-3 h-1 rounded-full ${currentIndex === index ? 'w-4 bg-red45' : 'bg-black15'}`}></div>
                         ))}
                     </div>
