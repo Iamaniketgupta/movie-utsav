@@ -92,7 +92,7 @@ export default function NavBar() {
             {/* Search and Notification */}
             <div className="hidden lg:flex items-center text-xl justify-between text-white gap-4">
                 <div className="cursor-pointer hover:text-gray75">
-                    <CiSearch  onClick={() => setModalOpen(true)} />
+                    <CiSearch onClick={() => setModalOpen(true)} />
                 </div>
                 <div className="cursor-pointer hover:text-gray75">
                     <GoBell />
@@ -130,7 +130,11 @@ export default function NavBar() {
 
                     <div className="my-5  flex items-center justify-end text-xl  text-white gap-4">
                         <div className="cursor-pointer hover:text-gray75">
-                            <CiSearch />
+                            <CiSearch onClick={(e) => {
+                                e.stopPropagation();
+                                setModalOpen(true)
+                                setIsMobileMenuOpen(false)
+                            }} />
                         </div>
                         <div className="cursor-pointer hover:text-gray75">
                             <GoBell />
@@ -172,19 +176,9 @@ export default function NavBar() {
                         >
                             TopRated
                         </a>
-                        {/* Mobile Icons (Search & Notifications) */}
-                        <div className="flex items-center gap-4 mt-6">
-                            <div className="cursor-pointer hover:text-gray75">
-                                <CiSearch 
-                                 onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    setModalOpen(true)}}/>
-                            </div>
-                            <div className="cursor-pointer hover:text-gray75">
-                                <GoBell />
-                            </div>
-                        </div>
+
                     </nav>
+
                 </motion.div>
             )}
 
