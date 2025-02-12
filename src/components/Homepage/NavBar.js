@@ -20,13 +20,13 @@ export default function NavBar() {
     const hidenavItems = pathname.startsWith("/show/");
 
     useEffect(() => {
-       console.log("first")
+        console.log("first")
         const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        console.log({entry})
+                        console.log({ entry })
                         setActiveSection(entry.target.id);
                     }
                 });
@@ -43,7 +43,7 @@ export default function NavBar() {
         };
     }, []);
 
-    console.log({activeSection})
+    console.log({ activeSection })
 
 
     return (
@@ -153,40 +153,42 @@ export default function NavBar() {
                         >
                             Home
                         </a>
-                        <a
-                            href="#upcoming"
-                            className={`text-white ${activeSection === "upcoming" ? "font-bold" : ""}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Upcoming
-                        </a>
-                        <a
-                            href="#latest"
-                            className={`text-white ${activeSection === "latest" ? "font-bold" : ""}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Latest
-                        </a>
-                        <a
-                            href="#popular"
-                            className={`text-white ${activeSection === "popular" ? "font-bold" : ""}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Popular
-                        </a>
-                        <a
-                            href="#toprated"
-                            className={`text-white ${activeSection === "toprated" ? "font-bold" : ""}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            TopRated
-                        </a>
-
+                        {!hidenavItems && <>
+                            <a
+                                href="#upcoming"
+                                className={`text-white ${activeSection === "upcoming" ? "font-bold" : ""}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Upcoming
+                            </a>
+                            <a
+                                href="#latest"
+                                className={`text-white ${activeSection === "latest" ? "font-bold" : ""}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Latest
+                            </a>
+                            <a
+                                href="#popular"
+                                className={`text-white ${activeSection === "popular" ? "font-bold" : ""}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Popular
+                            </a>
+                            <a
+                                href="#toprated"
+                                className={`text-white ${activeSection === "toprated" ? "font-bold" : ""}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                TopRated
+                            </a>
+                        </>}
                     </nav>
 
                 </motion.div>
-            )}
+            )
+            }
 
-        </header>
+        </header >
     );
 }
