@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setLoading, setError, setMoviesData } from "../../lib/slices/movie";
 import Loader from "../Loader";
+import FeedBack from "../FeedBack";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -72,6 +73,8 @@ export default function Home() {
           </div>
         </div>
       }
+
+      <FeedBack></FeedBack>
     </main>
   );
 }
